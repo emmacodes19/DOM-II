@@ -1,7 +1,7 @@
 // Your code goes here
 
 
-//1 
+//1  moueenter
 const mapImage = document.querySelector('.img-content');
 console.log(mapImage);
 
@@ -10,13 +10,13 @@ mapImage.addEventListener('mouseenter', () => {
     mapImage.style.transition = 'all 0.3s';
 });
 
-//2
+//2 mouseleave
 mapImage.addEventListener('mouseleave', () => {
     mapImage.style.transform = 'scale(1)';
     mapImage.style.transition = 'all 0.3s';
 })
 
-//3  with Stop Propagation
+//3   click with Stop Propagation
 document.querySelectorAll('.nav-link').forEach(element=> {
     element.addEventListener('click', (event) => {
         element.style.color = 'blue';
@@ -25,38 +25,39 @@ document.querySelectorAll('.nav-link').forEach(element=> {
 })
 
 
-//4 
+//4 dblclick 
 const newImg = document.querySelector('.intro img');
 newImg.addEventListener('dblclick', () => {
     newImg.src =" https://images.unsplash.com/photo-1547584370-2cc98b8b8dc8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1051&q=80";
 })
 
 
-//5 
+//5 resize
 const resizeImg = document.querySelector('.inverse-content .img-content img');
 window.addEventListener('resize', () => {
     resizeImg.src = 'https://images.unsplash.com/photo-1494870363241-b5225be3dada?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80'
 })
 
-//6 
+//6 keydown
 
 const body = document.querySelector('body');
 body.addEventListener('keydown',() => {
-body.style.backgroundColor="blue";
+body.style.backgroundColor="coral";
 
 
 })
 
-//7 
+ //7 load
 
-const navigation = document.querySelector('.main-navigation');
-navigation.addEventListener('click', (event) => {
-    navigation.style.border = '5px solid orange';
+ window.addEventListener('load', (event) => {
+    alert ('Welcome friend');
+   
    
 })
 
 
-//8 
+
+//8 mousemove
 const footer = document.querySelector('.footer p');
 footer.addEventListener('mousemove',() => {
 footer.style.color ='hotpink';
@@ -65,18 +66,21 @@ alert('See you soon');
 })
 
 
-//9 
- document.querySelectorAll('.btn').forEach(el => {
-    el.addEventListener('click', () => {
-        el.style.transform = "rotate(180deg)";
-        
-    })
+
+//9 wheel
+ 
+ 
+const lastBoat = document.querySelector('.content-destination img');
+lastBoat.addEventListener('wheel', () => {
+    lastBoat.style.transform='scale(0.2)'
 })
 
 
 
 
-//10 with Stop Propagation
+
+
+//10  mouseout - with Stop Propagation
 
  document.querySelectorAll('.destination h4').forEach(ele => {
      ele.addEventListener('mouseout', (event)=> {
@@ -93,44 +97,45 @@ alert('See you soon');
     ele.addEventListener('mouseout', ()=> {
         ele.style.color="green";
         
+
         
     })
 
     
 })
 
+ // 11 click with Stop Propagation to child element (nav links)
 
- 
-
-
-
-
- //11 
- 
- 
-     const lastBoat = document.querySelector('.content-destination img');
-     lastBoat.addEventListener('wheel', () => {
-         lastBoat.style.transform='scale(0.2)'
-     })
-     
-    
-    
- //12 
-
- window.addEventListener('load', (event) => {
-    alert ('Welcome friend');
-   
+const navigation = document.querySelector('.main-navigation');
+navigation.addEventListener('click', (event) => {
+    navigation.style.border = '5px solid orange';
    
 })
 
-//13
+
+
+ 
+//12 click on Button
+document.querySelectorAll('.btn').forEach(el => {
+    el.addEventListener('click', () => {
+        el.style.transform = "rotate(180deg)";
+        
+    })
+})
+
+
+
+ 
+
+
+//13 resize
 
 window.addEventListener('resize', (event)=> {
     alert ('You are now in a Responsive Layout')
     
 })
 
-//14
+//14 scroll
 
 window.addEventListener('scroll', () => {
    const change =  document.querySelector('.intro');
@@ -138,7 +143,7 @@ window.addEventListener('scroll', () => {
 
 })
 
-//15
+//15 scroll
 
 window.addEventListener('scroll', () => {
     const change =  document.querySelector('.text-content');
@@ -149,12 +154,14 @@ window.addEventListener('scroll', () => {
  
  
 
-//16
+//16 mouseover
 navigation.addEventListener('mouseover', (element)=> {
     navigation.style.backgroundColor="green";
     
     
 })
+
+
 
 //17 Stop Navs using preventDefault---
 
